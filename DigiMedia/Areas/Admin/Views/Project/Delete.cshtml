@@ -1,0 +1,21 @@
+﻿@using DigiMedia.Core.Models
+@model Project
+
+<div class="container">
+    <div class="row">
+        <form asp-action="DeletePost" method="post" enctype="multipart/form-data">
+            <div class="col-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/uploads/projects/@Model.ImageUrl" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.Title</h5>
+                        <p class="card-text">@Model.Description</p>
+                        <input asp-for="@Model.Id" hidden value="@Model.Id" />
+                        <a asp-action="Index" class="btn btn-primary">Go back</a>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
